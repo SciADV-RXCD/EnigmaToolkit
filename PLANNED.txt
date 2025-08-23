@@ -1,0 +1,5 @@
+[ DEATH END RE;QUEST 1 + 2 ]
+- Extract and Repack .dat Archives
+- Extract and Repack .tid, .tex, main.DAT, .gstr, .gbin Files
+- Make 3D Models atleast viewable, idk if i can make them repackable too?
+- try to extract audio stuff, maybe?
