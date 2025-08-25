@@ -33,6 +33,10 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            panel2 = new Panel();
+            button8 = new Button();
+            button9 = new Button();
+            label8 = new Label();
             panel1 = new Panel();
             label4 = new Label();
             button4 = new Button();
@@ -51,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -83,19 +88,61 @@
             tabControl1.Location = new Point(12, 118);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(776, 320);
+            tabControl1.Size = new Size(776, 255);
             tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(panel1);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(768, 292);
+            tabPage1.Size = new Size(768, 227);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Death end re;Quest 1 + 2";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(button8);
+            panel2.Controls.Add(button9);
+            panel2.Controls.Add(label8);
+            panel2.Location = new Point(568, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 227);
+            panel2.TabIndex = 1;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(3, 69);
+            button8.Name = "button8";
+            button8.Size = new Size(190, 23);
+            button8.TabIndex = 2;
+            button8.Text = "Repack Archives";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(3, 40);
+            button9.Name = "button9";
+            button9.Size = new Size(190, 23);
+            button9.TabIndex = 1;
+            button9.Text = "Extract Archives";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // label8
+            // 
+            label8.BorderStyle = BorderStyle.FixedSingle;
+            label8.Location = new Point(-2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(200, 37);
+            label8.TabIndex = 0;
+            label8.Text = "Batch Operations";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -111,12 +158,12 @@
             panel1.Controls.Add(label2);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 292);
+            panel1.Size = new Size(200, 227);
             panel1.TabIndex = 0;
             // 
             // label4
             // 
-            label4.Location = new Point(5, 134);
+            label4.Location = new Point(5, 98);
             label4.Name = "label4";
             label4.Size = new Size(190, 23);
             label4.TabIndex = 7;
@@ -125,7 +172,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(162, 160);
+            button4.Location = new Point(162, 124);
             button4.Name = "button4";
             button4.Size = new Size(33, 23);
             button4.TabIndex = 5;
@@ -135,7 +182,7 @@
             // 
             // label3
             // 
-            label3.Location = new Point(5, 57);
+            label3.Location = new Point(5, 37);
             label3.Name = "label3";
             label3.Size = new Size(190, 23);
             label3.TabIndex = 4;
@@ -144,14 +191,14 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(5, 160);
+            textBox2.Location = new Point(5, 124);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(151, 23);
             textBox2.TabIndex = 6;
             // 
             // button3
             // 
-            button3.Location = new Point(162, 83);
+            button3.Location = new Point(162, 63);
             button3.Name = "button3";
             button3.Size = new Size(33, 23);
             button3.TabIndex = 1;
@@ -161,14 +208,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(5, 83);
+            textBox1.Location = new Point(5, 63);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(151, 23);
             textBox1.TabIndex = 3;
             // 
             // button2
             // 
-            button2.Location = new Point(5, 262);
+            button2.Location = new Point(5, 191);
             button2.Name = "button2";
             button2.Size = new Size(190, 23);
             button2.TabIndex = 2;
@@ -178,7 +225,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(5, 233);
+            button1.Location = new Point(5, 162);
             button1.Name = "button1";
             button1.Size = new Size(190, 23);
             button1.TabIndex = 1;
@@ -201,7 +248,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(768, 292);
+            tabPage2.Size = new Size(768, 227);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Neptunia Re;Birth 1 + 2 + 3";
             tabPage2.UseVisualStyleBackColor = true;
@@ -211,7 +258,7 @@
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(768, 292);
+            tabPage3.Size = new Size(768, 227);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Mary Skelter 2 + Finale";
             tabPage3.UseVisualStyleBackColor = true;
@@ -247,7 +294,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 473);
             Controls.Add(progressBar1);
             Controls.Add(button5);
             Controls.Add(label5);
@@ -263,6 +310,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -289,5 +337,9 @@
         private Label label5;
         private Button button5;
         private ProgressBar progressBar1;
+        private Panel panel2;
+        private Button button8;
+        private Button button9;
+        private Label label8;
     }
 }

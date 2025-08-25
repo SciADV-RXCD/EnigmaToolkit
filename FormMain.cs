@@ -22,11 +22,11 @@ namespace EnigmaToolkit
                 Directory.CreateDirectory("Tools");
             }
 
-            if (File.Exists($@"{AppContext.BaseDirectory}\\Tools\\dds2png.exe") && 
-                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\dds2tex.exe") && 
-                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\dds2tid.exe") && 
-                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\extract_cl3.exe") && 
-                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\extract_dat.exe") && 
+            if (File.Exists($@"{AppContext.BaseDirectory}\\Tools\\dds2png.exe") &&
+                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\dds2tex.exe") &&
+                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\dds2tid.exe") &&
+                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\extract_cl3.exe") &&
+                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\extract_dat.exe") &&
                 File.Exists($@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe") &&
                 File.Exists($@"{AppContext.BaseDirectory}\\Tools\\pickup_text.exe") &&
                 File.Exists($@"{AppContext.BaseDirectory}\\Tools\\png2tex.exe") &&
@@ -116,7 +116,7 @@ namespace EnigmaToolkit
                 wc_locale.DownloadProgressChanged += wc_locale_DownloadProgressChanged;
                 wc_locale.DownloadFileAsync(
                     // Param1 = Link of file
-                    new System.Uri("https://cdn.discordapp.com/attachments/844635048745369611/1409140663995596890/ExternalToolset.zip?ex=68ac4c02&is=68aafa82&hm=cfeda2977916cc479610bd8f9feb24bae99a7e3568c6f755d9233c5da4748fa3&"),
+                    new System.Uri("https://github.com/SciADV-RXCD/EnigmaToolkit/releases/download/0.0.0/ExternalToolset.zip"),
                     // Param2 = Path to save
                     AppContext.BaseDirectory + "ExternalToolset.zip"
                 );
@@ -142,6 +142,58 @@ namespace EnigmaToolkit
         void wc_locale_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar1.Value = e.ProgressPercentage;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog SelectDATArchiveBatch = new FolderBrowserDialog
+            {
+                Description = "Select DAT Archive Folder for Batch Extract",
+                ShowNewFolderButton = false
+            };
+            if (SelectDATArchiveBatch.ShowDialog() == DialogResult.OK)
+            {
+                string[] files = Directory.GetFiles(SelectDATArchiveBatch.SelectedPath, "GxArchivedFile*.dat");
+                foreach (string DATArchive in files)
+                {
+                    Process ExtractDATArchiveBatch = new Process()
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = $@"{AppContext.BaseDirectory}\\Tools\\extract_dat.exe",
+                            Arguments = DATArchive + " -o " + DATArchive + "_extracted",
+                            WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                        }
+                    };
+                    ExtractDATArchiveBatch.Start();
+                }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog SelectDATArchiveBatch = new FolderBrowserDialog
+            {
+                Description = "Select DAT Archive Folder for Batch Extract",
+                ShowNewFolderButton = false
+            };
+            if (SelectDATArchiveBatch.ShowDialog() == DialogResult.OK)
+            {
+                string[] files = Directory.GetFiles(SelectDATArchiveBatch.SelectedPath, "GxArchivedFile*.dat");
+                foreach (string DATArchive in files)
+                {
+                    Process ExtractDATArchiveBatch = new Process()
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = $@"{AppContext.BaseDirectory}\\Tools\\replace_dat.exe",
+                            Arguments = DATArchive + " " + DATArchive + "_extracted" + " -o " + DATArchive + "_NEW",
+                            WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                        }
+                    };
+                    ExtractDATArchiveBatch.Start();
+                }
+            }
         }
     }
 }
