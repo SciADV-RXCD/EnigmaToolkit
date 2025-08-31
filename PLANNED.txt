@@ -3,3 +3,14 @@
 - Extract and Repack .tid, .tex, main.DAT, .gstr, .gbin Files
 - Make 3D Models atleast viewable, idk if i can make them repackable too?
 - try to extract audio stuff, maybe?
+- Make Text Edits inside the toolkit possible???
+		Maybe first convert it to .txt, utf8 -N
+		then read the .txt file in the DataGridView, 1 Column for ID, 2nd Column for original Text, 3rd Column for edited Text
+		then convert it back to .gstr or whatever it is
+		then recompile it back, this time only utf8.
+- TID CONVERSION
+Convert .tid through dds2png.exe
+Use texconv.exe -ft DDS -f BC1_UNORM_SRGB <INPUTFILE>
+then dds2tid.exe
+- Use current Batch Mode Place for external programs or text editor
+- Next to the Tab Control make a new Batch Mode Buttons for all Games
