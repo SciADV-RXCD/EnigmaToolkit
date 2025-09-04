@@ -32,7 +32,8 @@ namespace EnigmaToolkit
                 File.Exists($@"{AppContext.BaseDirectory}\\Tools\\png2tex.exe") &&
                 File.Exists($@"{AppContext.BaseDirectory}\\Tools\\replace_cl3.exe") &&
                 File.Exists($@"{AppContext.BaseDirectory}\\Tools\\replace_dat.exe") &&
-                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\tex2dds.exe")
+                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\tex2dds.exe") &&
+                File.Exists($@"{AppContext.BaseDirectory}\\Tools\\texconv.exe")
                 )
             {
                 button5.Enabled = false;
@@ -471,6 +472,67 @@ namespace EnigmaToolkit
             };
 
             ConvertTXTtoGSTR.Start();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog SelectGBINScript = new OpenFileDialog
+            {
+                Title = "Select GBIN Script",
+                Filter = "GBIN Script (*.gbin)|*.gbin",
+                RestoreDirectory = true
+            };
+
+            if (SelectGBINScript.ShowDialog() == DialogResult.OK)
+            {
+                textBox10.Text = SelectGBINScript.FileName;
+                textBox9.Text = SelectGBINScript.FileName + ".txt";
+            }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog SelectDecompiledGBINScript = new OpenFileDialog
+            {
+                Title = "Select Decompiled GBIN Script",
+                Filter = "Decompiled GBIN Script (*.gbin.txt)|*.gbin.txt",
+                RestoreDirectory = true
+            };
+
+            if (SelectDecompiledGBINScript.ShowDialog() == DialogResult.OK)
+            {
+                textBox9.Text = SelectDecompiledGBINScript.FileName;
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            Process ConvertGBINtoTXT = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = $@"{AppContext.BaseDirectory}\\Tools\\pickup_text.exe",
+                    Arguments = "--utf8 -N " + textBox10.Text,
+                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                }
+            };
+
+            ConvertGBINtoTXT.Start();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Process ConvertTXTtoGBIN = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
+                    Arguments = "--utf8 " + textBox10.Text + " " + textBox9.Text + " -o " + $"{textBox10.Text}-NEW",
+                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                }
+            };
+
+            ConvertTXTtoGBIN.Start();
         }
     }
 }

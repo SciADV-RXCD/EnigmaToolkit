@@ -33,7 +33,16 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            panel6 = new Panel();
             label18 = new Label();
+            button23 = new Button();
+            label19 = new Label();
+            textBox9 = new TextBox();
+            button24 = new Button();
+            textBox10 = new TextBox();
+            button25 = new Button();
+            button26 = new Button();
+            label20 = new Label();
             label17 = new Label();
             label16 = new Label();
             panel5 = new Panel();
@@ -84,18 +93,23 @@
             button1 = new Button();
             label2 = new Label();
             tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
             label5 = new Label();
             button5 = new Button();
             progressBar1 = new ProgressBar();
+            label21 = new Label();
+            tabPage3 = new TabPage();
+            label22 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel6.SuspendLayout();
             panel5.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -133,7 +147,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(label18);
+            tabPage1.Controls.Add(panel6);
             tabPage1.Controls.Add(label17);
             tabPage1.Controls.Add(label16);
             tabPage1.Controls.Add(panel5);
@@ -149,22 +163,111 @@
             tabPage1.Text = "Death end re;Quest 1 + 2";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel6
+            // 
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(label18);
+            panel6.Controls.Add(button23);
+            panel6.Controls.Add(label19);
+            panel6.Controls.Add(textBox9);
+            panel6.Controls.Add(button24);
+            panel6.Controls.Add(textBox10);
+            panel6.Controls.Add(button25);
+            panel6.Controls.Add(button26);
+            panel6.Controls.Add(label20);
+            panel6.Location = new Point(597, 314);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(200, 315);
+            panel6.TabIndex = 14;
+            // 
             // label18
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label18.Location = new Point(624, 418);
+            label18.Location = new Point(5, 161);
             label18.Name = "label18";
-            label18.Size = new Size(150, 56);
-            label18.TabIndex = 14;
-            label18.Text = ".GBIN Scripts\r\nPLACEHOLDER";
+            label18.Size = new Size(190, 23);
+            label18.TabIndex = 7;
+            label18.Text = "Decompiled Script";
             label18.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button23
+            // 
+            button23.Location = new Point(161, 187);
+            button23.Name = "button23";
+            button23.Size = new Size(33, 23);
+            button23.TabIndex = 5;
+            button23.Text = "...";
+            button23.UseVisualStyleBackColor = true;
+            button23.Click += button23_Click;
+            // 
+            // label19
+            // 
+            label19.Location = new Point(5, 77);
+            label19.Name = "label19";
+            label19.Size = new Size(190, 23);
+            label19.TabIndex = 4;
+            label19.Text = "Compiled Script";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(5, 187);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(151, 23);
+            textBox9.TabIndex = 6;
+            // 
+            // button24
+            // 
+            button24.Location = new Point(161, 103);
+            button24.Name = "button24";
+            button24.Size = new Size(33, 23);
+            button24.TabIndex = 1;
+            button24.Text = "...";
+            button24.UseVisualStyleBackColor = true;
+            button24.Click += button24_Click;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(5, 103);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(151, 23);
+            textBox10.TabIndex = 3;
+            // 
+            // button25
+            // 
+            button25.Location = new Point(5, 287);
+            button25.Name = "button25";
+            button25.Size = new Size(190, 23);
+            button25.TabIndex = 2;
+            button25.Text = "Compile";
+            button25.UseVisualStyleBackColor = true;
+            button25.Click += button25_Click;
+            // 
+            // button26
+            // 
+            button26.Location = new Point(5, 258);
+            button26.Name = "button26";
+            button26.Size = new Size(190, 23);
+            button26.TabIndex = 1;
+            button26.Text = "Decompile";
+            button26.UseVisualStyleBackColor = true;
+            button26.Click += button26_Click;
+            // 
+            // label20
+            // 
+            label20.Dock = DockStyle.Top;
+            label20.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label20.Location = new Point(0, 0);
+            label20.Name = "label20";
+            label20.Size = new Size(198, 48);
+            label20.TabIndex = 0;
+            label20.Text = ".GBIN Scripts\r\nCompile/Decompile";
+            label20.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label17.Location = new Point(205, 418);
+            label17.Location = new Point(218, 418);
             label17.Name = "label17";
             label17.Size = new Size(150, 56);
             label17.TabIndex = 13;
@@ -175,7 +278,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label16.Location = new Point(7, 418);
+            label16.Location = new Point(21, 418);
             label16.Name = "label16";
             label16.Size = new Size(150, 56);
             label16.TabIndex = 12;
@@ -659,23 +762,14 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label21);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(797, 629);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Neptunia Re;Birth 1 + 2 + 3";
+            tabPage2.Text = "Mary Skelter 2 + Finale";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(797, 629);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Mary Skelter 2 + Finale";
-            tabPage3.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -704,6 +798,39 @@
             progressBar1.Size = new Size(141, 23);
             progressBar1.TabIndex = 5;
             // 
+            // label21
+            // 
+            label21.Dock = DockStyle.Fill;
+            label21.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            label21.Location = new Point(3, 3);
+            label21.Name = "label21";
+            label21.Size = new Size(791, 623);
+            label21.TabIndex = 0;
+            label21.Text = "PLACEHOLDER\r\n\r\nPLANNED FOR v2.0.0";
+            label21.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(label22);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(797, 629);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Neptunia Re;Birth 1 + 2 + 3";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            label22.Dock = DockStyle.Fill;
+            label22.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            label22.Location = new Point(3, 3);
+            label22.Name = "label22";
+            label22.Size = new Size(791, 623);
+            label22.TabIndex = 1;
+            label22.Text = "PLACEHOLDER\r\n\r\nPLANNED FOR v3.0.0";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -725,6 +852,8 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel3.ResumeLayout(false);
@@ -734,6 +863,8 @@
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -744,7 +875,6 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private TabPage tabPage3;
         private Panel panel1;
         private Label label2;
         private Button button3;
@@ -795,8 +925,20 @@
         private Button button21;
         private Label label15;
         private Button button22;
-        private Label label18;
         private Label label17;
         private Label label16;
+        private Panel panel6;
+        private Label label18;
+        private Button button23;
+        private Label label19;
+        private TextBox textBox9;
+        private Button button24;
+        private TextBox textBox10;
+        private Button button25;
+        private Button button26;
+        private Label label20;
+        private Label label21;
+        private TabPage tabPage3;
+        private Label label22;
     }
 }
