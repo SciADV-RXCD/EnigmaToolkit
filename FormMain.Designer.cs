@@ -33,6 +33,26 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            panel8 = new Panel();
+            label17 = new Label();
+            button27 = new Button();
+            label25 = new Label();
+            textBox13 = new TextBox();
+            button28 = new Button();
+            textBox14 = new TextBox();
+            button29 = new Button();
+            button30 = new Button();
+            label26 = new Label();
+            panel7 = new Panel();
+            label16 = new Label();
+            button6 = new Button();
+            label23 = new Label();
+            textBox11 = new TextBox();
+            button7 = new Button();
+            textBox12 = new TextBox();
+            button8 = new Button();
+            button9 = new Button();
+            label24 = new Label();
             panel6 = new Panel();
             label18 = new Label();
             button23 = new Button();
@@ -43,8 +63,6 @@
             button25 = new Button();
             button26 = new Button();
             label20 = new Label();
-            label17 = new Label();
-            label16 = new Label();
             panel5 = new Panel();
             label13 = new Label();
             button18 = new Button();
@@ -56,6 +74,7 @@
             button21 = new Button();
             label15 = new Label();
             panel3 = new Panel();
+            button31 = new Button();
             button22 = new Button();
             label6 = new Label();
             button10 = new Button();
@@ -77,10 +96,6 @@
             button15 = new Button();
             label12 = new Label();
             panel2 = new Panel();
-            button6 = new Button();
-            button8 = new Button();
-            button7 = new Button();
-            button9 = new Button();
             label8 = new Label();
             panel1 = new Panel();
             label4 = new Label();
@@ -93,15 +108,18 @@
             button1 = new Button();
             label2 = new Label();
             tabPage2 = new TabPage();
-            label5 = new Label();
-            button5 = new Button();
-            progressBar1 = new ProgressBar();
             label21 = new Label();
             tabPage3 = new TabPage();
             label22 = new Label();
+            label5 = new Label();
+            button5 = new Button();
+            progressBar1 = new ProgressBar();
+            button32 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel8.SuspendLayout();
+            panel7.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             panel3.SuspendLayout();
@@ -147,9 +165,9 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(panel8);
+            tabPage1.Controls.Add(panel7);
             tabPage1.Controls.Add(panel6);
-            tabPage1.Controls.Add(label17);
-            tabPage1.Controls.Add(label16);
             tabPage1.Controls.Add(panel5);
             tabPage1.Controls.Add(panel3);
             tabPage1.Controls.Add(panel4);
@@ -162,6 +180,206 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Death end re;Quest 1 + 2";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            panel8.BorderStyle = BorderStyle.FixedSingle;
+            panel8.Controls.Add(label17);
+            panel8.Controls.Add(button27);
+            panel8.Controls.Add(label25);
+            panel8.Controls.Add(textBox13);
+            panel8.Controls.Add(button28);
+            panel8.Controls.Add(textBox14);
+            panel8.Controls.Add(button29);
+            panel8.Controls.Add(button30);
+            panel8.Controls.Add(label26);
+            panel8.Location = new Point(199, 314);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(200, 315);
+            panel8.TabIndex = 16;
+            // 
+            // label17
+            // 
+            label17.Location = new Point(5, 161);
+            label17.Name = "label17";
+            label17.Size = new Size(190, 23);
+            label17.TabIndex = 7;
+            label17.Text = "Decompiled Script";
+            label17.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button27
+            // 
+            button27.Location = new Point(161, 187);
+            button27.Name = "button27";
+            button27.Size = new Size(33, 23);
+            button27.TabIndex = 5;
+            button27.Text = "...";
+            button27.UseVisualStyleBackColor = true;
+            button27.Click += button27_Click;
+            // 
+            // label25
+            // 
+            label25.Location = new Point(5, 77);
+            label25.Name = "label25";
+            label25.Size = new Size(190, 23);
+            label25.TabIndex = 4;
+            label25.Text = "Compiled Script";
+            label25.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(5, 187);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(151, 23);
+            textBox13.TabIndex = 6;
+            // 
+            // button28
+            // 
+            button28.Location = new Point(161, 103);
+            button28.Name = "button28";
+            button28.Size = new Size(33, 23);
+            button28.TabIndex = 1;
+            button28.Text = "...";
+            button28.UseVisualStyleBackColor = true;
+            button28.Click += button28_Click;
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(5, 103);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(151, 23);
+            textBox14.TabIndex = 3;
+            // 
+            // button29
+            // 
+            button29.Location = new Point(5, 287);
+            button29.Name = "button29";
+            button29.Size = new Size(190, 23);
+            button29.TabIndex = 2;
+            button29.Text = "Compile";
+            button29.UseVisualStyleBackColor = true;
+            button29.Click += button29_Click;
+            // 
+            // button30
+            // 
+            button30.Location = new Point(5, 258);
+            button30.Name = "button30";
+            button30.Size = new Size(190, 23);
+            button30.TabIndex = 1;
+            button30.Text = "Decompile";
+            button30.UseVisualStyleBackColor = true;
+            button30.Click += button30_Click;
+            // 
+            // label26
+            // 
+            label26.Dock = DockStyle.Top;
+            label26.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label26.Location = new Point(0, 0);
+            label26.Name = "label26";
+            label26.Size = new Size(198, 48);
+            label26.TabIndex = 0;
+            label26.Text = "main.DAT Scripts\r\nCompile/Decompile";
+            label26.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel7
+            // 
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(label16);
+            panel7.Controls.Add(button6);
+            panel7.Controls.Add(label23);
+            panel7.Controls.Add(textBox11);
+            panel7.Controls.Add(button7);
+            panel7.Controls.Add(textBox12);
+            panel7.Controls.Add(button8);
+            panel7.Controls.Add(button9);
+            panel7.Controls.Add(label24);
+            panel7.Location = new Point(0, 314);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(200, 315);
+            panel7.TabIndex = 15;
+            // 
+            // label16
+            // 
+            label16.Location = new Point(5, 161);
+            label16.Name = "label16";
+            label16.Size = new Size(190, 23);
+            label16.TabIndex = 7;
+            label16.Text = "Extracted Folder";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(161, 187);
+            button6.Name = "button6";
+            button6.Size = new Size(33, 23);
+            button6.TabIndex = 5;
+            button6.Text = "...";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click_1;
+            // 
+            // label23
+            // 
+            label23.Location = new Point(5, 77);
+            label23.Name = "label23";
+            label23.Size = new Size(190, 23);
+            label23.TabIndex = 4;
+            label23.Text = "Selected Archive";
+            label23.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(5, 187);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(151, 23);
+            textBox11.TabIndex = 6;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(161, 103);
+            button7.Name = "button7";
+            button7.Size = new Size(33, 23);
+            button7.TabIndex = 1;
+            button7.Text = "...";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click_1;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(5, 103);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(151, 23);
+            textBox12.TabIndex = 3;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(5, 287);
+            button8.Name = "button8";
+            button8.Size = new Size(190, 23);
+            button8.TabIndex = 2;
+            button8.Text = "Repack";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click_1;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(5, 258);
+            button9.Name = "button9";
+            button9.Size = new Size(190, 23);
+            button9.TabIndex = 1;
+            button9.Text = "Extract";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click_1;
+            // 
+            // label24
+            // 
+            label24.Dock = DockStyle.Top;
+            label24.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label24.Location = new Point(0, 0);
+            label24.Name = "label24";
+            label24.Size = new Size(198, 48);
+            label24.TabIndex = 0;
+            label24.Text = ".CL3 Archives\r\nExtract/Repack";
+            label24.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -262,28 +480,6 @@
             label20.TabIndex = 0;
             label20.Text = ".GBIN Scripts\r\nCompile/Decompile";
             label20.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label17.Location = new Point(218, 418);
-            label17.Name = "label17";
-            label17.Size = new Size(150, 56);
-            label17.TabIndex = 13;
-            label17.Text = "main.DAT\r\nPLACEHOLDER";
-            label17.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label16.Location = new Point(21, 418);
-            label16.Name = "label16";
-            label16.Size = new Size(150, 56);
-            label16.TabIndex = 12;
-            label16.Text = ".CL3 Archive\r\nPLACEHOLDER";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -388,6 +584,7 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(button31);
             panel3.Controls.Add(button22);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(button10);
@@ -402,6 +599,17 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 315);
             panel3.TabIndex = 10;
+            // 
+            // button31
+            // 
+            button31.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button31.Location = new Point(156, -1);
+            button31.Name = "button31";
+            button31.Size = new Size(43, 44);
+            button31.TabIndex = 6;
+            button31.Text = "?";
+            button31.UseVisualStyleBackColor = true;
+            button31.Click += button31_Click;
             // 
             // button22
             // 
@@ -599,55 +807,11 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(button6);
-            panel2.Controls.Add(button8);
-            panel2.Controls.Add(button7);
-            panel2.Controls.Add(button9);
             panel2.Controls.Add(label8);
             panel2.Location = new Point(597, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 315);
             panel2.TabIndex = 1;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(5, 189);
-            button6.Name = "button6";
-            button6.Size = new Size(190, 23);
-            button6.TabIndex = 11;
-            button6.Text = "Convert DDS to TEX";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(5, 131);
-            button8.Name = "button8";
-            button8.Size = new Size(190, 23);
-            button8.TabIndex = 2;
-            button8.Text = "Repack Archives";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(5, 160);
-            button7.Name = "button7";
-            button7.Size = new Size(190, 23);
-            button7.TabIndex = 10;
-            button7.Text = "Convert TEX to DDS";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(5, 102);
-            button9.Name = "button9";
-            button9.Size = new Size(190, 23);
-            button9.TabIndex = 1;
-            button9.Text = "Extract Archives";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
             // 
             // label8
             // 
@@ -655,9 +819,9 @@
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label8.Location = new Point(0, 0);
             label8.Name = "label8";
-            label8.Size = new Size(198, 48);
+            label8.Size = new Size(198, 100);
             label8.TabIndex = 0;
-            label8.Text = "Batch Operations";
+            label8.Text = "Batch Operations\r\n(WIP)\r\nNEED TO REMAKE";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -771,33 +935,6 @@
             tabPage2.Text = "Mary Skelter 2 + Finale";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.Location = new Point(676, 12);
-            label5.Name = "label5";
-            label5.Size = new Size(141, 23);
-            label5.TabIndex = 3;
-            label5.Text = "Toolset";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(676, 38);
-            button5.Name = "button5";
-            button5.Size = new Size(141, 28);
-            button5.TabIndex = 4;
-            button5.Text = "Download";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
-            // 
-            // progressBar1
-            // 
-            progressBar1.Location = new Point(676, 72);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(141, 23);
-            progressBar1.TabIndex = 5;
-            // 
             // label21
             // 
             label21.Dock = DockStyle.Fill;
@@ -831,11 +968,50 @@
             label22.Text = "PLACEHOLDER\r\n\r\nPLANNED FOR v3.0.0";
             label22.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label5
+            // 
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label5.Location = new Point(676, 12);
+            label5.Name = "label5";
+            label5.Size = new Size(141, 23);
+            label5.TabIndex = 3;
+            label5.Text = "Toolset";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(676, 38);
+            button5.Name = "button5";
+            button5.Size = new Size(141, 28);
+            button5.TabIndex = 4;
+            button5.Text = "Download";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(676, 72);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(141, 23);
+            progressBar1.TabIndex = 5;
+            // 
+            // button32
+            // 
+            button32.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button32.Location = new Point(509, 38);
+            button32.Name = "button32";
+            button32.Size = new Size(161, 28);
+            button32.TabIndex = 6;
+            button32.Text = "Documentation";
+            button32.UseVisualStyleBackColor = true;
+            button32.Click += button32_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(827, 782);
+            Controls.Add(button32);
             Controls.Add(progressBar1);
             Controls.Add(button5);
             Controls.Add(label5);
@@ -851,7 +1027,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel5.ResumeLayout(false);
@@ -889,8 +1068,6 @@
         private Button button5;
         private ProgressBar progressBar1;
         private Panel panel2;
-        private Button button8;
-        private Button button9;
         private Label label8;
         private Panel panel4;
         private Label label11;
@@ -902,8 +1079,6 @@
         private Label label10;
         private Button button12;
         private TextBox textBox5;
-        private Button button6;
-        private Button button7;
         private Panel panel3;
         private Label label6;
         private Button button10;
@@ -925,8 +1100,6 @@
         private Button button21;
         private Label label15;
         private Button button22;
-        private Label label17;
-        private Label label16;
         private Panel panel6;
         private Label label18;
         private Button button23;
@@ -940,5 +1113,27 @@
         private Label label21;
         private TabPage tabPage3;
         private Label label22;
+        private Panel panel7;
+        private Label label16;
+        private Button button6;
+        private Label label23;
+        private TextBox textBox11;
+        private Button button7;
+        private TextBox textBox12;
+        private Button button8;
+        private Button button9;
+        private Label label24;
+        private Panel panel8;
+        private Label label17;
+        private Button button27;
+        private Label label25;
+        private TextBox textBox13;
+        private Button button28;
+        private TextBox textBox14;
+        private Button button29;
+        private Button button30;
+        private Label label26;
+        private Button button31;
+        private Button button32;
     }
 }

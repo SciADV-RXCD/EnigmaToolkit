@@ -11,8 +11,22 @@ namespace EnigmaToolkit
         public FormMain()
         {
             InitializeComponent();
-            label1.Text = $"Enigma Toolkit\nv{Application.ProductVersion}";
             progressBar1.Visible = false;
+
+            DebugToolkitVersion();
+            ReleaseToolkitVersion();
+        }
+
+        [ConditionalAttribute("DEBUG")]
+        public void DebugToolkitVersion()
+        {
+            label1.Text = $"Enigma Toolkit\nv{Application.ProductVersion}";
+        }
+
+        [ConditionalAttribute("RELEASE")]
+        public void ReleaseToolkitVersion()
+        {
+            label1.Text = $"Enigma Toolkit\nv1.0.0";
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -72,7 +86,15 @@ namespace EnigmaToolkit
 
             if (SelectExtractedDATArchiveFolder.ShowDialog() == DialogResult.OK)
             {
-                textBox2.Text = SelectExtractedDATArchiveFolder.SelectedPath;
+                if (SelectExtractedDATArchiveFolder.SelectedPath.Contains("GxArchivedFile") && SelectExtractedDATArchiveFolder.SelectedPath.Contains(".dat_extracted"))
+                {
+                    textBox2.Text = SelectExtractedDATArchiveFolder.SelectedPath;
+                }
+                else
+                {
+                    MessageBox.Show("Please select the folder with the same name as the original .DAT Archive and the suffix '_extracted'.");
+                    textBox2.Text = "";
+                }
             }
         }
 
@@ -429,7 +451,7 @@ namespace EnigmaToolkit
 
         private void button22_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("-ft DDS -f BC1_UNORM_SRGB " + textBox3.Text + " -o " + Path.GetDirectoryName(textBox3.Text));
+            //MessageBox.Show("-ft DDS -f BC1_UNORM_SRGB " + textBox3.Text + " -o " + Path.GetDirectoryName(textBox3.Text));
 
             Process ConvertPNGtoDDS = new Process()
             {
@@ -466,7 +488,7 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 " + textBox8.Text + " " + textBox7.Text + " -o " + $"{textBox8.Text}-NEW",
+                    Arguments = "--utf8 " + textBox8.Text + " " + textBox7.Text + " -o " + $"{textBox8.Text}_NEW",
                     WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
@@ -527,12 +549,158 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 " + textBox10.Text + " " + textBox9.Text + " -o " + $"{textBox10.Text}-NEW",
+                    Arguments = "--utf8 " + textBox10.Text + " " + textBox9.Text + " -o " + $"{textBox10.Text}_NEW",
                     WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
             ConvertTXTtoGBIN.Start();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog SelectCL3Archive = new OpenFileDialog
+            {
+                Title = "Select CL3 Archive",
+                Filter = "DAT Archive (*.cl3)|*.cl3",
+                RestoreDirectory = true
+            };
+
+            if (SelectCL3Archive.ShowDialog() == DialogResult.OK)
+            {
+                textBox12.Text = SelectCL3Archive.FileName;
+                textBox11.Text = SelectCL3Archive.FileName + "_extracted";
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            FolderBrowserDialog SelectExtractedCL3ArchiveFolder = new FolderBrowserDialog
+            {
+                Description = "Select Extracted CL3 Archive Folder",
+                ShowNewFolderButton = true
+            };
+
+            if (SelectExtractedCL3ArchiveFolder.ShowDialog() == DialogResult.OK)
+            {
+                if (SelectExtractedCL3ArchiveFolder.SelectedPath.Contains(".cl3_extracted"))
+                {
+                    textBox11.Text = SelectExtractedCL3ArchiveFolder.SelectedPath;
+                }
+                else
+                {
+                    MessageBox.Show("Please select the folder with the same name as the original .CL3 Archive and the suffix '_extracted'.");
+                    textBox11.Text = "";
+                }
+            }
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            Process ExtractCL3Archive = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = $@"{AppContext.BaseDirectory}\\Tools\\extract_cl3.exe",
+                    Arguments = textBox12.Text + " -o " + textBox11.Text,
+                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                }
+            };
+            ExtractCL3Archive.Start();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            Process RepackCL3Archive = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = $@"{AppContext.BaseDirectory}\\Tools\\replace_cl3.exe",
+                    Arguments = textBox12.Text + " " + textBox11.Text + " -o " + textBox12.Text + "_NEW",
+                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                }
+            };
+            RepackCL3Archive.Start();
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog SelectMainDATScript = new OpenFileDialog
+            {
+                Title = "Select main.DAT Script",
+                Filter = "main.DAT Script (*main.DAT)|*main.DAT",
+                RestoreDirectory = true
+            };
+
+            if (SelectMainDATScript.ShowDialog() == DialogResult.OK)
+            {
+                textBox14.Text = SelectMainDATScript.FileName;
+                textBox13.Text = SelectMainDATScript.FileName + ".txt";
+            }
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog SelectDecompiledMainDATScript = new OpenFileDialog
+            {
+                Title = "Select Decompiled main.DAT Script",
+                Filter = "Decompiled main.DAT Script (*main.DAT.txt)|*main.DAT.txt",
+                RestoreDirectory = true
+            };
+
+            if (SelectDecompiledMainDATScript.ShowDialog() == DialogResult.OK)
+            {
+                textBox13.Text = SelectDecompiledMainDATScript.FileName;
+            }
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            Process ConvertMainDATtoTXT = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = $@"{AppContext.BaseDirectory}\\Tools\\pickup_text.exe",
+                    Arguments = "--utf8 -N " + textBox14.Text,
+                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                }
+            };
+
+            ConvertMainDATtoTXT.Start();
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            Process ConvertTXTtoMainDAT = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
+                    Arguments = "--utf8 " + textBox14.Text + " " + textBox13.Text + " -o " + $"{textBox14.Text}_NEW",
+                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                }
+            };
+
+            ConvertTXTtoMainDAT.Start();
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Because idk how, if you want to convert a PNG back to TID, you first need to 'Convert to DDS' and then 'Convert to TID'.");
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            Process OpenDocumentation = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "https://docs.google.com/document/d/1AVqnTxH1n66ATuarwuVVEqYiJImpsO3sopChHfH0Iew",
+                    UseShellExecute = true
+                }
+            };
+
+            OpenDocumentation.Start();
         }
     }
 }
