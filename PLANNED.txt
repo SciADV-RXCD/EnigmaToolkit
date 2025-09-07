@@ -1,16 +1,20 @@
-[ DEATH END RE;QUEST 1 + 2 ]
-- Extract and Repack .dat Archives
-- Extract and Repack .tid, .tex, main.DAT, .gstr, .gbin Files
+#####################################
+########## CURRENT ROADMAP ##########
+#####################################
+
+Priority: Highest
+- Remake the whole GUI (yes seriously, i'm stupid as fuck and idk why i didn't have this idea much earlier, because this is so much cleaner and better)
+	-> Make a Home Screen with just buttons for each game/series with it's logo
+	-> Each button launches a seperate forms window with the available tools for that game/series
+	-> the Home Screen also has the Tool Download button as well as the Documentation button - Documentation button can also be found in each game's window, but directly linking to the specific game's documentation
+
+########## DEATH END RE;QUEST 1 + 2 ##########
 - Make 3D Models atleast viewable, idk if i can make them repackable too?
 - try to extract audio stuff, maybe?
-- Make Text Edits inside the toolkit possible???
-		Maybe first convert it to .txt, utf8 -N
-		then read the .txt file in the DataGridView, 1 Column for ID, 2nd Column for original Text, 3rd Column for edited Text
-		then convert it back to .gstr or whatever it is
-		then recompile it back, this time only utf8.
-- TID CONVERSION
-Convert .tid through dds2png.exe
-Use texconv.exe -ft DDS -f BC1_UNORM_SRGB <INPUTFILE>
-then dds2tid.exe
-- Use current Batch Mode Place for external programs or text editor
-- Next to the Tab Control make a new Batch Mode Buttons for all Games
+
+########## TRILLION ##########
+.XWB files can be extracted by unxwb (unxwb.exe -d *FOLDER* ***.xwb)
+.XWB files can be extracted WITH FILENAMES like this: (unxwb.exe -d *FOLDER* -b ***.xsb *HEXOFFSET-TO-DECIMAL-FROM-XSB* ***.xwb)
+		-> Open the .xsb file in a hex editor, search for the first readable filename/audioname, convert the hex offset to decimal and use that number
+.wav files extracted by them can be viewed in VLC or MPV - maybe convert to mp3 with ffmpeg? (ffmpeg -i ***.wav -b:a 192K ***.mp3)?
+.pac files are used, same as Neptunia Re;Birth1
