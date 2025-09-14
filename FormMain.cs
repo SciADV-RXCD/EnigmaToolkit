@@ -488,7 +488,7 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 " + textBox8.Text + " " + textBox7.Text + " -o " + $"{textBox8.Text}_NEW",
+                    Arguments = "--utf8 -N " + textBox8.Text + " " + textBox7.Text + " -o " + $"{textBox8.Text}_NEW",
                     WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
@@ -549,7 +549,7 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 " + textBox10.Text + " " + textBox9.Text + " -o " + $"{textBox10.Text}_NEW",
+                    Arguments = "--utf8 -N " + textBox10.Text + " " + textBox9.Text + " -o " + $"{textBox10.Text}_NEW",
                     WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
@@ -676,7 +676,7 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 " + textBox14.Text + " " + textBox13.Text + " -o " + $"{textBox14.Text}_NEW",
+                    Arguments = "--utf8 -N " + textBox14.Text + " " + textBox13.Text + " -o " + $"{textBox14.Text}_NEW",
                     WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
