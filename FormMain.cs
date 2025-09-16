@@ -26,7 +26,7 @@ namespace EnigmaToolkit
         [ConditionalAttribute("RELEASE")]
         public void ReleaseToolkitVersion()
         {
-            label1.Text = $"Enigma Toolkit\nv1.0.0";
+            label1.Text = $"Enigma Toolkit\nv1.0.1";
         }
 
         private void FormMain_Load(object sender, EventArgs e)
