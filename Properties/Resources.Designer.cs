@@ -69,5 +69,35 @@ namespace EnigmaToolkit.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Death_end_reQuest_Game_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Death-end-reQuest-Game-Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EasterEgg {
+            get {
+                object obj = ResourceManager.GetObject("EasterEgg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NeptuniaCustomTrilogyLogo {
+            get {
+                object obj = ResourceManager.GetObject("NeptuniaCustomTrilogyLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
