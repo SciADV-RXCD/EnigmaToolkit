@@ -83,8 +83,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\extract_dat.exe",
-                    Arguments = textBox1.Text + " -o " + textBox2.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "\"" + textBox1.Text + "\" -o \"" + textBox2.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
             ExtractDATArchive.Start();
@@ -98,8 +98,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\replace_dat.exe",
-                    Arguments = textBox1.Text + " " + textBox2.Text + " -o " + textBox1.Text + "_NEW",
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "\"" + textBox1.Text + "\" \"" + textBox2.Text + "\" -o \"" + textBox1.Text + "_NEW \"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
             RepackDATArchive.Start();
@@ -148,8 +148,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\tex2dds.exe",
-                    Arguments = textBox6.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "\"" + textBox6.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
@@ -163,17 +163,12 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\dds2tex.exe",
-                    Arguments = textBox5.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "\"" + textBox5.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
             ConvertDDStoTEX.Start();
-        }
-
-        private void button31_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Because idk how, if you want to convert a PNG back to TID, you first need to 'Convert to DDS' and then 'Convert to TID'.");
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -219,27 +214,28 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\dds2png.exe",
-                    Arguments = textBox4.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "\"" + textBox4.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
-
+            ConvertTIDtoPNG.EnableRaisingEvents = true;
             ConvertTIDtoPNG.Start();
-        }
 
-        private void button22_Click(object sender, EventArgs e)
-        {
-            Process ConvertPNGtoDDS = new Process()
+            ConvertTIDtoPNG.Exited += (s, ev) =>
             {
-                StartInfo = new ProcessStartInfo
+                // After TID to DDS conversion is done, convert DDS to PNG
+                string ddsFilePath = textBox4.Text.Replace(".tid", ".dds");
+                Process ConvertDDStoPNG = new Process()
                 {
-                    FileName = $@"{AppContext.BaseDirectory}\\Tools\\texconv.exe",
-                    Arguments = "-ft DDS -f BC1_UNORM_SRGB " + textBox3.Text + " -o " + Path.GetDirectoryName(textBox3.Text),
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
-                }
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = $@"{AppContext.BaseDirectory}\\Tools\\dds2png.exe",
+                        Arguments = "\"" + ddsFilePath + "\"",
+                        //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    }
+                };
+                ConvertDDStoPNG.Start();
             };
-
-            ConvertPNGtoDDS.Start();
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -252,8 +248,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\dds2tid.exe",
-                    Arguments = ddsFilePathFinal,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "\"" + ddsFilePathFinal + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
@@ -305,8 +301,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\extract_cl3.exe",
-                    Arguments = textBox12.Text + " -o " + textBox11.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "-x \"" + textBox12.Text + "\" -o \"" + textBox11.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
             ExtractCL3Archive.Start();
@@ -319,8 +315,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\replace_cl3.exe",
-                    Arguments = textBox12.Text + " " + textBox11.Text + " -o " + textBox12.Text + "_NEW",
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "\"" + textBox12.Text + "\" \"" + textBox11.Text + "\" -o \"" + textBox12.Text + "_NEW \"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
             RepackCL3Archive.Start();
@@ -364,8 +360,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\pickup_text.exe",
-                    Arguments = "--utf8 -N " + textBox14.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "--utf8 -N \"" + textBox14.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
@@ -379,8 +375,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 -N " + textBox14.Text + " " + textBox13.Text + " -o " + $"{textBox14.Text}_NEW",
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "--utf8 \"" + textBox14.Text + "\" \"" + textBox13.Text + "\" -o \"" + textBox14.Text + "_NEW \"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
@@ -425,8 +421,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\pickup_text.exe",
-                    Arguments = "--utf8 -N " + textBox8.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "--utf8 -N \"" + textBox8.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
@@ -440,8 +436,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 -N " + textBox8.Text + " " + textBox7.Text + " -o " + $"{textBox8.Text}_NEW",
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "--utf8 -N \"" + textBox8.Text + "\" \"" + textBox7.Text + "\" -o \"" + textBox8.Text + "_NEW \"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
@@ -486,8 +482,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\pickup_text.exe",
-                    Arguments = "--utf8 -N " + textBox10.Text,
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "--utf8 -N \"" + textBox10.Text + "\"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 
@@ -501,8 +497,8 @@ namespace EnigmaToolkit
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = $@"{AppContext.BaseDirectory}\\Tools\\modify_text.exe",
-                    Arguments = "--utf8 -N " + textBox10.Text + " " + textBox9.Text + " -o " + $"{textBox10.Text}_NEW",
-                    WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
+                    Arguments = "--utf8 -N \"" + textBox10.Text + "\" \"" + textBox9.Text + "\" -o \"" + textBox10.Text + "_NEW \"",
+                    //WorkingDirectory = @$"{AppContext.BaseDirectory}\\Tools",
                 }
             };
 

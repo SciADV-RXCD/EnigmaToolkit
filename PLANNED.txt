@@ -6,7 +6,8 @@ Priority: Highest
 - Remake the whole GUI (yes seriously, i'm stupid as fuck and idk why i didn't have this idea much earlier, because this is so much cleaner and better)
 	-> Make a Home Screen with just buttons for each game/series with it's logo
 	-> Each button launches a seperate forms window with the available tools for that game/series
-	-> the Home Screen also has the Tool Download button as well as the Documentation button - Documentation button can also be found in each game's window, but directly linking to the specific game's documentation
+	-> the Home Screen also has the Tool Download button as well as the Documentation button 
+	   Documentation button can also be found in each game's window, but directly linking to the specific game's documentation
 
 ########## DEATH END RE;QUEST 1 + 2 ##########
 - Make 3D Models atleast viewable, idk if i can make them repackable too?

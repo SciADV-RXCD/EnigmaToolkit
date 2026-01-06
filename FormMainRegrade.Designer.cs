@@ -185,6 +185,7 @@
             Controls.Add(label5);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormMainRegrade";
             Text = "FormMainRegrade";
             Load += FormMainRegrade_Load;

@@ -52,8 +52,6 @@
             button15 = new Button();
             label12 = new Label();
             panel3 = new Panel();
-            button31 = new Button();
-            button22 = new Button();
             label6 = new Label();
             button10 = new Button();
             label7 = new Label();
@@ -353,8 +351,6 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(button31);
-            panel3.Controls.Add(button22);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(button10);
             panel3.Controls.Add(label7);
@@ -368,27 +364,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 315);
             panel3.TabIndex = 16;
-            // 
-            // button31
-            // 
-            button31.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button31.Location = new Point(156, -1);
-            button31.Name = "button31";
-            button31.Size = new Size(43, 44);
-            button31.TabIndex = 6;
-            button31.Text = "?";
-            button31.UseVisualStyleBackColor = true;
-            button31.Click += button31_Click;
-            // 
-            // button22
-            // 
-            button22.Location = new Point(5, 257);
-            button22.Name = "button22";
-            button22.Size = new Size(190, 23);
-            button22.TabIndex = 8;
-            button22.Text = "Convert to DDS";
-            button22.UseVisualStyleBackColor = true;
-            button22.Click += button22_Click;
             // 
             // label6
             // 
@@ -454,7 +429,7 @@
             // 
             // button17
             // 
-            button17.Location = new Point(6, 228);
+            button17.Location = new Point(5, 258);
             button17.Name = "button17";
             button17.Size = new Size(190, 23);
             button17.TabIndex = 1;
@@ -968,8 +943,6 @@
         private Button button15;
         private Label label12;
         private Panel panel3;
-        private Button button31;
-        private Button button22;
         private Label label6;
         private Button button10;
         private Label label7;
